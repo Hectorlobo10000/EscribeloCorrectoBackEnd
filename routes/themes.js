@@ -7,13 +7,11 @@ router.get('/api/chapters/:chapter/themes/:theme', (req, res) => {
   var getTheme = chapterRef.get()
     .then(doc => {
       if(!doc.exists) {
-        res.statusCode = 400;
-        res.send({
+        res.status(500).json({
           message: 'Document no such!'
         });
       } else {
-        res.statusCode = 200;
-        res.send(doc.data());
+        res.status(200).json(doc.data());
       }
     })
     .catch(err => {

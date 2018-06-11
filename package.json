@@ -13,7 +13,9 @@
     "firebase-admin": "^5.12.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "nodemon": "^1.17.5",
     "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }

@@ -3,8 +3,8 @@ var router = express.Router();
 var db = require('./firebase');
 
 router.get('/api/grades/:grade/themes/:theme', (req, res) => {
-  var chapterRef = db.collection('Grades/SetUps/Grade' + req.params.grade).doc('Theme' + req.params.theme);
-  var getTheme = chapterRef.get()
+  var gradeRef = db.collection('Grades/SetUps/Grade' + req.params.grade).doc('Theme' + req.params.theme);
+  var getTheme = gradeRef.get()
     .then(doc => {
       if(!doc.exists) {
         res.status(500).json({
